@@ -1,0 +1,59 @@
+{
+  "name": "simple-timeout-promise",
+  "version": "1.0.0",
+  "description": "a simple timed out promise implementation",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint . --cache",
+    "prettier": "prettier --no-semi --single-quote --arrow-parens always \"src/**/*.js\" --write",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chendoron/simple-timeout-promise.git"
+  },
+  "author": "Chen Doron <chendoron85@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chendoron/simple-timeout-promise/issues"
+  },
+  "homepage": "https://github.com/chendoron/simple-timeout-promise#readme",
+  "keywords": ["promise", "promises", "timeout", "delay", "async", "await", "bluebird"],
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.0.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^23.6.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "1.15.2"
+  },
+  "jest": {
+    "clearMocks": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js}"
+    ],
+    "coverageReporters": [
+      "text",
+      "text-summary",
+      "cobertura"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  },
+  "pre-commit": [
+    "test",
+    "lint"
+  ]
+}
