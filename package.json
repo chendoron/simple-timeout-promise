@@ -1,6 +1,6 @@
 {
   "name": "simple-timeout-promise",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a simple timed out promise implementation",
   "main": "src/index.js",
   "scripts": {
