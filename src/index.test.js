@@ -31,7 +31,8 @@ describe('utils/timeout-promise', () => {
           )
       )
 
-      it('rejects with a timeout error', () => {
+      it('rejects with a timeout error', async () => {
+        expect.assertions(1)
         const timeoutPromiseDelay = 1000
 
         const timeoutPromise = new TimeoutPromise(
@@ -41,11 +42,16 @@ describe('utils/timeout-promise', () => {
 
         jest.advanceTimersByTime(asyncFunctionDelay)
 
-        const expectedError = new TimeoutError(timeoutPromiseDelay)
-        expect(timeoutPromise).rejects.toThrow(expectedError)
+        try {
+          await timeoutPromise
+        } catch (error) {
+          const expectedError = new TimeoutError(timeoutPromiseDelay)
+          expect(error).toEqual(expectedError)
+        }
       })
 
-      it('resolves with a correct value', () => {
+      it('resolves with a correct value', async () => {
+        expect.assertions(1)
         const timeoutPromiseDelay = 10000
 
         const timeoutPromise = new TimeoutPromise(
@@ -55,7 +61,7 @@ describe('utils/timeout-promise', () => {
 
         jest.advanceTimersByTime(asyncFunctionDelay)
 
-        expect(timeoutPromise).resolves.toEqual(expectedValue)
+        expect(await timeoutPromise).toEqual(expectedValue)
       })
     })
 
@@ -67,7 +73,8 @@ describe('utils/timeout-promise', () => {
           )
       )
 
-      it('rejects with a timeout error', () => {
+      it('rejects with a timeout error', async () => {
+        expect.assertions(1)
         const timeoutPromiseDelay = 1000
 
         const timeoutPromise = new TimeoutPromise(
@@ -77,11 +84,16 @@ describe('utils/timeout-promise', () => {
 
         jest.advanceTimersByTime(asyncFunctionDelay)
 
-        const expectedError = new TimeoutError(timeoutPromiseDelay)
-        expect(timeoutPromise).rejects.toThrow(expectedError)
+        try {
+          await timeoutPromise
+        } catch (error) {
+          const expectedError = new TimeoutError(timeoutPromiseDelay)
+          expect(error).toEqual(expectedError)
+        }
       })
 
-      it('resolves with a correct value', () => {
+      it('resolves with a correct value', async () => {
+        expect.assertions(1)
         const timeoutPromiseDelay = 10000
 
         const timeoutPromise = new TimeoutPromise(
@@ -91,7 +103,11 @@ describe('utils/timeout-promise', () => {
 
         jest.advanceTimersByTime(asyncFunctionDelay)
 
-        expect(timeoutPromise).rejects.toEqual(expectedValue)
+        try {
+          await timeoutPromise
+        } catch (error) {
+          expect(error).toEqual(expectedValue)
+        }
       })
     })
   })

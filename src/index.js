@@ -24,11 +24,11 @@ class TimeoutPromise {
       promise
         .then((response) => {
           clearTimeout(timeout)
-          return resolve(response)
+          resolve(response)
         })
         .catch((rejection) => {
           clearTimeout(timeout)
-          return reject(rejection)
+          reject(rejection)
         })
     })
     return this.promise
