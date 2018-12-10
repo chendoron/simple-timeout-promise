@@ -19,7 +19,23 @@
     "url": "https://github.com/chendoron/simple-timeout-promise/issues"
   },
   "homepage": "https://github.com/chendoron/simple-timeout-promise#readme",
-  "keywords": ["promise", "promises", "timeout", "delay", "async", "await", "bluebird"],
+  "keywords": [
+    "promise",
+    "promises",
+    "timeout",
+    "delay",
+    "async",
+    "await",
+    "bluebird",
+    "wrap",
+    "defer",
+    "delayed",
+    "reject",
+    "resolve",
+    "rejected",
+    "resolved",
+    "error"
+  ],
   "devDependencies": {
     "eslint": "^5.9.0",
     "eslint-config-prettier": "^3.3.0",
