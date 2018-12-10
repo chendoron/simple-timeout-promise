@@ -14,9 +14,6 @@ Run lint with `npm run lint`.
 
   - Do not push code directly. Make a pulls to the `master` branch.
   - Delete any branches as soon as they are merged into `master`.
-  - All commits should pass the pre-commit tests.
-
-*`git commit` will run lint and unit tests as a pre-commit hook. If the build does not pass, the pull request will not be merged anyway. If you would like to bypass the pre-commit hook, use `git commit -n`* 
   
 ### Types
 
