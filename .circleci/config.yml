@@ -7,7 +7,7 @@ version: 2
 defaults: &defaults
   working_directory: ~/simple-timeout-promise
   docker:
-    - image: circleci/node:8.11.3
+    - image: circleci/node:latest
 
 jobs:
   test:
@@ -41,7 +41,9 @@ jobs:
 
       # Upload test results
       - store_test_results:
-          path: coverage
+          path: reports
+      - store_artifacts:
+          path: reports
 
       - persist_to_workspace:
           root: ~/simple-timeout-promise
@@ -74,4 +76,4 @@ workflows:
             tags:
               only: /^(\d+\.)?(\d+\.)?(\*|\d+)$/
             branches:
-              only: master
+              ignore: /^.*/

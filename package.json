@@ -4,7 +4,9 @@
   "description": "a simple timed out promise implementation",
   "main": "src/index.js",
   "scripts": {
-    "lint": "eslint . --cache",
+    "eslint": "eslint . --cache",
+    "jest": "jest --coverageReporters=html",
+    "lint": "eslint . --cache --format junit -o reports/eslint/lint.xml",
     "prettier": "prettier --no-semi --single-quote --arrow-parens always \"src/**/*.js\" --write",
     "test": "jest",
     "test:watch": "jest --watch"
@@ -45,6 +47,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^23.6.0",
+    "jest-junit": "^5.2.0",
     "prettier": "1.15.2"
   },
   "jest": {
@@ -53,6 +56,7 @@
     "collectCoverageFrom": [
       "src/**/*.{js}"
     ],
+    "coverageDirectory": "<rootDir>/reports/coverage",
     "coverageReporters": [
       "text",
       "text-summary",
@@ -65,6 +69,14 @@
         "lines": 100,
         "statements": 100
       }
-    }
+    },
+    "reporters": [
+      "default",
+      "jest-junit"
+    ]
+  },
+  "jest-junit": {
+    "outputDirectory": "./reports/jest",
+    "outputName": "./junit.xml"
   }
 }
