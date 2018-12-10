@@ -4,6 +4,8 @@ This javascript module exports `TimeoutPromise` and `TimeoutError` to allow an e
 
 ## Motivation
 I was implementing this for work, and couldn't find any good examples online, so I figured I'd publish a module.
+The timeout promise modules that I did find, made usage of `Promise.race()` which isn't supported by Internet Explorer,
+This module uses ES6 only and supports all browsers.
 
 ## Installation
 
