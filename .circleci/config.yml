@@ -68,7 +68,7 @@ workflows:
       - test:
           filters:
             tags:
-              only: /^v.*/
+              only: /.*/
       - deploy:
           requires:
             - test
@@ -76,4 +76,4 @@ workflows:
             tags:
               only: /^(\d+\.)?(\d+\.)?(\*|\d+)$/
             branches:
-              ignore: /^.*/
+              ignore: /.*/
